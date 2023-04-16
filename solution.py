@@ -2,10 +2,9 @@ import pandas as pd
 import numpy as np
 
 
-chat_id = 123456 # Ваш chat ID, не меняйте название переменной
+chat_id = 1019285902 # Ваш chat ID, не меняйте название переменной
 
 def solution(x: np.array, y: np.array) -> bool:
-    # Измените код этой функции
-    # Это будет вашим решением
-    # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+    _, pvalue = MMD(compute_kernel='rbf', gamma = 0.1).test(x, y)
+    ans = True if pvalue < 0.05 else False
+    return ans # Ваш ответ, True или False
